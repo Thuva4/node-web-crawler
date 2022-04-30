@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
-import { getUrl, isAllowedUrl, logStatus } from "./utils";
+import { getUrl, isAllowedUrl, logStatus } from "./Utils";
 import { ANCHOR_TAG } from "./Constants";
 import { IVisitor, MODULES, URL_STATUS, VisitorCallBack } from "./Types";
 

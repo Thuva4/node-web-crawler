@@ -1,5 +1,5 @@
 import { ICrawler, CrawlerOption, URL_STATUS, MODULES } from "./Types";
-import { hasSameSubDomain, logError } from "./utils";
+import { hasSameSubDomain, logError } from "./Utils";
 import { Visitor } from "./Visitor";
 
 export class Crawler implements ICrawler {
