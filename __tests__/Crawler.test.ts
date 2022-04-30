@@ -1,12 +1,19 @@
 import fs from "fs";
 import * as cheerio from "cheerio";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Crawler } from "../src/Crawler";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import * as Utils from "../src/Utils";
 
-jest.mock("node-fetch", () => jest.fn());
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { Visitor } from "../src/Visitor.ts";
 
-import { getUrl } from "../src/utils";
-import { Visitor } from "../src/Visitor";
+jest.mock("node-fetch", () => jest.fn());
 
 const mockOnDone = jest.fn();
 
@@ -30,7 +37,7 @@ describe("Crawler", () => {
       let links = $("a")
         .map((i, link) => link.attribs.href)
         .get()
-        .map((link) => getUrl(link, "example.com", "http:"));
+        .map((link) => Utils.getUrl(link, "example.com", "http:"));
       crawler.handleLinks(links);
 
       expect(queueSpy).toHaveBeenCalledTimes(2);
@@ -52,7 +59,7 @@ describe("Crawler", () => {
       links = $("a")
         .map((i, link) => link.attribs.href)
         .get()
-        .map((link) => getUrl(link, "google.com", "https:"));
+        .map((link) => Utils.getUrl(link, "google.com", "https:"));
 
       crawler.handleLinks(links);
 

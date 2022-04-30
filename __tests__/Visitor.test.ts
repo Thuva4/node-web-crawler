@@ -1,6 +1,12 @@
 import fs from "fs";
-import { Visitor } from "../src/Visitor";
-import * as Utils from "../src/Utils";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { Visitor } from "../src/Visitor.ts";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import * as Utils from "../src/Utils.ts";
 
 jest.mock("node-fetch", () => jest.fn());
 

@@ -1,4 +1,6 @@
-import { getUrl, hasSameSubDomain, isAllowedUrl } from "../src/utils";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { getUrl, hasSameSubDomain, isAllowedUrl } from "../src/Utils.ts";
 
 describe("utils", () => {
 
